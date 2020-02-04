@@ -10,7 +10,7 @@ export class EnlargeFontDirective implements AfterViewInit {
   private defaultSize: string;
 
   constructor(private el: ElementRef) {
-    console.log('second created');
+    this.el.nativeElement.style.transition = 'font-size 0.3s linear 0s';
   }
 
   ngAfterViewInit() {

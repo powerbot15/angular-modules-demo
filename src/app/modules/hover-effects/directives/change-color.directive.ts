@@ -7,7 +7,9 @@ export class ChangeColorDirective {
 
   @Input() appHoverColor: string;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) {
+    this.el.nativeElement.style.transition = 'color 0.3s linear 0s';
+  }
 
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.appHoverColor || 'yellow');
